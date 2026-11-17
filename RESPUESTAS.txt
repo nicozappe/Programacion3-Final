@@ -1,0 +1,57 @@
+      RESPUESTAS AL CUESTIONARIO TEÓRICO - TP3
+
+
+
+1. ¿Qué es una Web API y cuál es su función principal en una arquitectura cliente-servidor?
+
+-----------------------------------------------------------------------------------------
+
+Una Web API (Interfaz de Programación de Aplicaciones Web) es un conjunto de reglas y protocolos que permite la comunicación e intercambio de datos entre diferentes sistemas a través del protocolo HTTP. En una arquitectura cliente-servidor, actúa como una interfaz intermedia: el cliente (un sitio web, una app móvil o de escritorio) envía peticiones (request) y la Web API procesa la lógica en el servidor y retorna una respuesta (response), generalmente en formato JSON.
+
+
+
+2. Explique la diferencia entre los verbos HTTP: GET, POST, PUT y DELETE.
+
+--------------------------------------------------------------------------
+
+- GET: Se utiliza para consultar o recuperar información del servidor sin modificar el estado de la base de datos (operación de lectura).
+
+- POST: Se utiliza para crear un nuevo recurso en el servidor. Envía datos en el cuerpo (body) de la petición.
+
+- PUT: Se utiliza para actualizar de forma completa un recurso existente o crearlo si no existe.
+
+- DELETE: Se utiliza para eliminar un recurso específico existente en el servidor.
+
+
+
+3. ¿Qué representa una cadena de conexión (Connection String) y cuál es su importancia en la aplicación?
+
+------------------------------------------------------------------------------------------------------
+
+Una cadena de conexión es un texto estructurado que contiene toda la información necesaria para que una aplicación pueda localizar y autenticarse con un motor de base de datos. Incluye parámetros clave como la dirección del servidor (Server/Data Source), el nombre de la base de datos (Database/Initial Catalog), el tipo de seguridad y las credenciales de acceso (usuario y contraseña). Su importancia radica en que sin ella la aplicación no sabría dónde ni cómo conectar con la base de datos para leer o guardar datos.
+
+
+
+4. ¿Cuál es el propósito del archivo appsettings.json en un proyecto .NET?
+
+----------------------------------------------------------------------------
+
+El archivo appsettings.json sirve para almacenar variables de configuración globales de la aplicación de forma centralizada y desacoplada del código fuente. Permite guardar información sensible o configurable como cadenas de conexión a bases de datos, claves API, niveles de log (Logging) o parámetros de entorno (Desarrollo, Producción). Esto facilita modificar parámetros de ejecución sin tener que recompilar el código del programa.
+
+
+
+5. Explique el concepto de inyección de dependencias y cómo se implementa en .NET Core.
+
+----------------------------------------------------------------------------------------
+
+La Inyección de Dependencias (DI) es un patrón de diseño que consiste en suministrar a una clase las herramientas o servicios que necesita para funcionar desde el exterior, en lugar de que la clase los cree internamente con la palabra clave 'new'. 
+
+En .NET Core se implementa a través del contenedor de Inversión de Control (IoC) integrado, configurando los servicios en el archivo Program.cs mediante métodos como:
+
+- AddScoped: Crea una instancia por cada petición HTTP.
+
+- AddTransient: Crea una instancia cada vez que se solicita.
+
+- AddSingleton: Crea una única instancia para toda la vida de la aplicación.
+
+Luego, las dependencias se "inyectan" automáticamente a través de los constructores de las clases (por ejemplo, inyectando un IProductoService dentro del ProductosController).

@@ -1,0 +1,75 @@
+DESCRIPCIÓN DEL PROYECTO
+
+------------------------
+
+Este proyecto es una Web API desarrollada en .NET 8 / C# que implementa una arquitectura en capas (Controllers, Services, Repositories, Data y Models) para la gestión de productos. Conecta a una base de datos Microsoft SQL Server mediante ADO.NET / Dapper para realizar operaciones CRUD sobre la tabla 'Productos'.
+
+
+
+REQUISITOS PREVIOS
+
+------------------
+
+- .NET 8.0 SDK o superior.
+
+- Visual Studio 2022.
+
+- Microsoft SQL Server Management Studio (SSMS).
+
+
+
+ESTRUCTURA DE LA BASE DE DATOS
+
+------------------------------
+
+Base de datos: Programacion3
+
+Tabla: Productos
+
+
+
+Script de creación:
+
+--------------------------------------------------
+
+CREATE DATABASE Programacion3;
+
+GO
+
+USE Programacion3;
+
+GO
+
+
+
+CREATE TABLE Productos (
+
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+
+    Nombre VARCHAR(100) NOT NULL,
+
+    Precio DECIMAL(18,2) NOT NULL,
+
+    Stock INT NOT NULL
+
+);
+
+GO
+
+
+
+INSERT INTO Productos (Nombre, Precio, Stock) VALUES 
+
+('Teclado Mecánico', 45500.00, 15),
+
+('Mouse Inalámbrico', 18200.50, 30),
+
+('Monitor 24 pulgadas', 185000.00, 8),
+
+('Auriculares Gamer', 32400.00, 12),
+
+('Pendrive 64GB', 9500.00, 50);
+
+GO
+
+--------------------------------------------------
